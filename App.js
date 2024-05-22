@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, Modal, TextInput, Alert, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -11,18 +11,40 @@ import { Ionicons } from '@expo/vector-icons';
 import Register from './components/Register';
 import Availability from './components/Availability';
 import ParkingReg from './components/ParkingReg';
-import AppLoading from 'expo-app-loading';
+// import AppLoading from 'expo-app-loading';
+import * as SplashScreen from 'expo-splash-screen';
 import { useFonts, BlackHanSans_400Regular } from '@expo-google-fonts/black-han-sans';
+
+SplashScreen.preventAutoHideAsync();
 
 const Stack = createStackNavigator();
 
+// export default function App() {
+//   let [fontsLoaded] = useFonts({
+//     BlackHanSans_400Regular,
+//   });
+
+//   if (!fontsLoaded) {
+//     return <AppLoading />;
+//   }
+
 export default function App() {
-  let [fontsLoaded] = useFonts({
+  const [fontsLoaded] = useFonts({
     BlackHanSans_400Regular,
   });
 
+  useEffect(() => {
+    async function prepare() {
+      if (fontsLoaded) {
+        await SplashScreen.hideAsync(); // 폰트 로딩 후 스플래시 스크린 숨김
+      }
+    }
+
+    prepare();
+  }, [fontsLoaded]);
+
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return null; // 폰트 로딩 동안 null 반환
   }
 
   return (

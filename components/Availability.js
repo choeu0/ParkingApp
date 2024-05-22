@@ -40,7 +40,7 @@ const Availability = () => {
   let statusText = '';
 
   if (usageRate <= 33) {
-    statusBoxStyle = { ...styles.stateBox, backgroundColor: 'green' };
+    statusBoxStyle = { ...styles.stateBox, backgroundColor: 'rgba(120, 200, 160, 1)' };
     statusText = '원활';
   } else if (usageRate > 33 && usageRate <= 66) {
     statusBoxStyle = { ...styles.stateBox, backgroundColor: 'rgba(131, 167, 234, 1)' };
@@ -65,7 +65,7 @@ const Availability = () => {
           centerLabelComponent={() => {
             return (
               <View style={{ alignItems: 'center' }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: 'black', fontFamily: 'BlackHanSans_400Regular' }}>{availableSpots}/{totalSpots}</Text>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: 'black', fontFamily: 'BlackHanSans_400Regular' }}>{usedSpots}/{totalSpots}</Text>
                 <Text style={{ fontSize: 20, color: 'grey', fontFamily: 'BlackHanSans_400Regular' }}>총 주차대수</Text>
               </View>
             );
@@ -82,14 +82,21 @@ const Availability = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
   },
+  // title: {
+  //   fontSize: 50,
+  //   fontWeight: 'bold',
+  //   marginBottom: 100,
+  //   marginTop: -150,
+  //   color: '#333333',
+  //   fontFamily: 'BlackHanSans_400Regular'
+  // },
   title: {
-    fontSize: 50,
+    fontSize: 40,
     fontWeight: 'bold',
-    marginBottom: 100,
-    marginTop: -150,
+    marginBottom: 20,
     color: '#333333',
     fontFamily: 'BlackHanSans_400Regular'
   },
@@ -104,7 +111,7 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderRadius: 20,
     marginTop: 50,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
     marginBottom: -130,
   },
@@ -113,7 +120,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontFamily: 'BlackHanSans_400Regular',
-    marginTop: 8
+    marginTop: 10,
   },
   backgroundImage: {
     flex: 1,

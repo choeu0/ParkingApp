@@ -88,14 +88,14 @@ export default function Search() {
                 <Text style={styles.txt}>A1</Text>
               </View>
               <View style={[styles.box, styles.lightGrayBackground]}>
-              {inputText === reg2 && <Image source={require('../assets/ping.png')} style={styles.image} />}
-              <Text style={styles.txt}>A2</Text>
+              {inputText === reg3 && <Image source={require('../assets/ping.png')} style={styles.image} />}
+              <Text style={styles.txt}>A3</Text>
               </View>
             </View>
             <View style={styles.topBoxesContainer}>
               <View style={[styles.box, styles.lightGrayBackground]}>
-              {inputText === reg3 && <Image source={require('../assets/ping.png')} style={styles.image} />}
-              <Text style={styles.txt}>A3</Text>
+              {inputText === reg2 && <Image source={require('../assets/ping.png')} style={styles.image} />}
+              <Text style={styles.txt}>A2</Text>
               </View>
               <View style={[styles.box, styles.lightGrayBackground]}>
               {inputText === reg4 && <Image source={require('../assets/ping.png')} style={styles.image} />}

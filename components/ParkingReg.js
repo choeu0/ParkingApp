@@ -158,31 +158,6 @@ const ParkingReg = () => {
             <Text style={styles.boxText}>A1</Text>
           </View>
           
-          <View style={getBoxStyle(isA2Occupied, isA2Registered)}>
-            <Animated.Image
-              source={Car}
-              style={[
-                styles.image,
-                {
-                  transform: [
-                    {
-                      translateX: carAnimationA2.interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [screenWidth, 0],
-                      }),
-                    },
-                  ],
-                },
-              ]}
-            />
-            <View style={styles.regBox}>
-              <Text style={styles.regBoxText}>{getBoxText(isA2Occupied, isA2Registered)}</Text>
-            </View>
-            <Text style={styles.boxText}>A2</Text>
-          </View>
-        </View>
-
-        <View style={styles.boxContainer}>
           <View style={getBoxStyle(isA3Occupied, isA3Registered)}>
             <Animated.Image
               source={Car}
@@ -190,6 +165,7 @@ const ParkingReg = () => {
                 styles.image,
                 {
                   transform: [
+                    { scaleX: -1 },
                     {
                       translateX: carAnimationA3.interpolate({
                         inputRange: [0, 1],
@@ -205,7 +181,10 @@ const ParkingReg = () => {
             </View>
             <Text style={styles.boxText}>A3</Text>
           </View>
-          <View style={getBoxStyle(isA4Occupied, isA4Registered)}>
+        </View>
+
+        <View style={styles.boxContainer}>
+          <View style={getBoxStyle(isA2Occupied, isA2Registered)}>
             <Animated.Image
               source={Car}
               style={[
@@ -213,9 +192,32 @@ const ParkingReg = () => {
                 {
                   transform: [
                     {
+                      translateX: carAnimationA2.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [-screenWidth, 0],
+                      }),
+                    },
+                  ],
+                },
+              ]}
+            />
+            <View style={styles.regBox}>
+              <Text style={styles.regBoxText}>{getBoxText(isA2Occupied, isA2Registered)}</Text>
+            </View>
+            <Text style={styles.boxText}>A2</Text>
+          </View>
+          <View style={getBoxStyle(isA4Occupied, isA4Registered)}>
+            <Animated.Image
+              source={Car}
+              style={[
+                styles.image,
+                {
+                  transform: [
+                    { scaleX: -1 },
+                    {
                       translateX: carAnimationA4.interpolate({
                         inputRange: [0, 1],
-                        outputRange: [screenWidth, 0],
+                        outputRange: [-screenWidth, 0],
                       }),
                     },
                   ],

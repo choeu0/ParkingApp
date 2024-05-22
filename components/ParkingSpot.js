@@ -110,6 +110,7 @@ const ParkingSpot = () => {
             />
             <Text style={styles.boxText}>A1</Text>
           </View>
+          
           <View style={[styles.box, styles.topBox]}>
             <Animated.Image
               source={Car}
@@ -117,29 +118,7 @@ const ParkingSpot = () => {
                 styles.image,
                 {
                   transform: [
-                    {
-                      translateX: carAnimationA2.interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [screenWidth, 0],
-                      }),
-                    },
-                  ],
-                },
-              ]}
-            />
-            <Text style={styles.boxText}>A2</Text>
-          </View>
-        </View>
-
-        {/* 아래쪽에 두 개의 박스 */}
-        <View style={styles.boxContainer}>
-          <View style={[styles.box, styles.bottomBox]}>
-            <Animated.Image
-              source={Car}
-              style={[
-                styles.image,
-                {
-                  transform: [
+                    { scaleX: -1 },
                     {
                       translateX: carAnimationA3.interpolate({
                         inputRange: [0, 1],
@@ -152,6 +131,11 @@ const ParkingSpot = () => {
             />
             <Text style={styles.boxText}>A3</Text>
           </View>
+        </View>
+
+        {/* 아래쪽에 두 개의 박스 */}
+        <View style={styles.boxContainer}>
+
           <View style={[styles.box, styles.bottomBox]}>
             <Animated.Image
               source={Car}
@@ -160,9 +144,30 @@ const ParkingSpot = () => {
                 {
                   transform: [
                     {
+                      translateX: carAnimationA2.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [-screenWidth, 0],
+                      }),
+                    },
+                  ],
+                },
+              ]}
+            />
+            <Text style={styles.boxText}>A2</Text>
+          </View>
+
+          <View style={[styles.box, styles.bottomBox]}>
+            <Animated.Image
+              source={Car}
+              style={[
+                styles.image,
+                {
+                  transform: [
+                    { scaleX: -1 },
+                    {
                       translateX: carAnimationA4.interpolate({
                         inputRange: [0, 1],
-                        outputRange: [screenWidth, 0],
+                        outputRange: [-screenWidth, 0],
                       }),
                     },
                   ],
