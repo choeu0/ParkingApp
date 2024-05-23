@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, StatusBar, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, StatusBar, ImageBackground, Dimensions } from 'react-native';
 import { getDatabase, ref, onValue } from '../firebaseConfig';
 import { PieChart } from "react-native-gifted-charts";
 import ParkingBackground from '../assets/parking.png';
@@ -79,30 +79,20 @@ const Availability = () => {
   );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
+    justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: height * 0.05, // 화면 높이의 5%로 마진 설정
   },
-  // title: {
-  //   fontSize: 50,
-  //   fontWeight: 'bold',
-  //   marginBottom: 100,
-  //   marginTop: -150,
-  //   color: '#333333',
-  //   fontFamily: 'BlackHanSans_400Regular'
-  // },
   title: {
     fontSize: 40,
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: height * 0.05, // 화면 높이의 5%로 마진 설정
     color: '#333333',
-    fontFamily: 'BlackHanSans_400Regular'
-  },
-  spotsText: {
-    fontSize: 18,
-    color: 'lightblue',
     fontFamily: 'BlackHanSans_400Regular'
   },
   stateBox: {
@@ -110,17 +100,16 @@ const styles = StyleSheet.create({
     height: 100,
     borderWidth: 0,
     borderRadius: 20,
-    marginTop: 50,
-    // justifyContent: 'center',
+    marginTop: height * 0.05, // 화면 높이의 5%로 마진 설정
     alignItems: 'center',
-    marginBottom: -130,
+    justifyContent: 'center',
   },
   stateBoxText: {
     fontSize: 50,
     color: 'white',
     fontWeight: 'bold',
     fontFamily: 'BlackHanSans_400Regular',
-    marginTop: 10,
+    marginBottom: 10,
   },
   backgroundImage: {
     flex: 1,

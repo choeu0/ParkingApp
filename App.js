@@ -232,6 +232,11 @@ function HomeScreen({ navigation }) {
     }
   };
 
+  function closeModal() {
+    setModalVisible(false);
+    navigation.navigate('Home'); // 모달을 닫고 홈 화면으로 이동
+  }
+
   return (
     <View style={[styles.container, { backgroundColor: 'white' }]}>
       <Image
@@ -265,6 +270,9 @@ function HomeScreen({ navigation }) {
       <Modal visible={isModalVisible} animationType="slide" transparent>
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
+            <TouchableOpacity style={styles.closeButton} onPress={closeModal}>
+              <Ionicons name="close-outline" size={20} color="lightblue" />
+            </TouchableOpacity>
             <Text style={styles.modalTitle}>비밀번호 입력</Text>
             <TextInput
               style={styles.input}
@@ -366,5 +374,12 @@ const styles = StyleSheet.create({
   layout: {
     borderColor: 'lightblue',
     borderWidth: 2,
+  },
+  closeButton: {
+    position: 'absolute',
+    top: 0, 
+    right: 0, 
+    padding: 5, 
+    zIndex: 1, // 모달 콘텐츠 위에 오도록 설정
   },
 });
