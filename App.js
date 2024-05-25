@@ -11,22 +11,13 @@ import { Ionicons } from '@expo/vector-icons';
 import Register from './components/Register';
 import Availability from './components/Availability';
 import ParkingReg from './components/ParkingReg';
-// import AppLoading from 'expo-app-loading';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts, BlackHanSans_400Regular } from '@expo-google-fonts/black-han-sans';
+// import { createDrawerNavigator } from '@react-navigation/drawer';
 
 SplashScreen.preventAutoHideAsync();
 
 const Stack = createStackNavigator();
-
-// export default function App() {
-//   let [fontsLoaded] = useFonts({
-//     BlackHanSans_400Regular,
-//   });
-
-//   if (!fontsLoaded) {
-//     return <AppLoading />;
-//   }
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -66,28 +57,30 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
+          // component={DrawerNavigator}
           options={({ navigation }) => ({
-            title: '',
-            headerLeft: () => (
-              <TouchableOpacity onPress={() => navigation.openDrawer({ DrawerBar })}>
-                <Ionicons name="menu" size={27} color="white" style={{ marginLeft: 10 }} />
-              </TouchableOpacity>
-            ),
-            headerTitle: () => (
-              <View style={styles.searchContainer}>
-                <TextInput
-                  style={styles.searchInput}
-                  placeholder="찾으시는 서비스를 검색하세요"
-                  placeholderTextColor="lightgray"
-                  // 검색 기능에 대한 설정 추가 가능
-                />
-              </View>
-            ),
-            headerRight: () => (
-              <TouchableOpacity onPress={() => console.log('검색')}>
-                <Ionicons name="search" size={24} color="white" style={{ marginRight: 15 }} />
-              </TouchableOpacity>
-            ),
+            title: '비주얼 주차장',
+          //   headerLeft: () => (
+          //     <TouchableOpacity onPress={() => navigation.openDrawer({ DrawerBar })}>
+          //     {/* <TouchableOpacity onPress={() => navigation.toggleDrawer()}> */}
+          //       <Ionicons name="menu" size={27} color="white" style={{ marginLeft: 10 }} />
+          //     </TouchableOpacity>
+          //   ),
+          //   headerTitle: () => (
+          //     <View style={styles.searchContainer}>
+          //       <TextInput
+          //         style={styles.searchInput}
+          //         placeholder="찾으시는 서비스를 검색하세요"
+          //         placeholderTextColor="lightgray"
+          //         // 검색 기능에 대한 설정 추가 가능
+          //       />
+          //     </View>
+          //   ),
+          //   headerRight: () => (
+          //     <TouchableOpacity onPress={() => console.log('검색')}>
+          //       <Ionicons name="search" size={24} color="white" style={{ marginRight: 15 }} />
+          //     </TouchableOpacity>
+          //   ),
           })}
         />
         <Stack.Screen
@@ -290,6 +283,22 @@ function HomeScreen({ navigation }) {
     </View>
   );
 }
+
+// const Drawer = createDrawerNavigator();
+
+// function DrawerNavigator() {
+//   return (
+//     <Drawer.Navigator>
+//       <Drawer.Screen name="HomeDrawer" component={HomeScreen} />
+//       <Drawer.Screen name="주차 공간 확인" component={ParkingSpot} />
+//       <Drawer.Screen name="내 차량 위치 찾기" component={Search} />
+//       <Drawer.Screen name="등록/비등록 주차상태" component={ParkingReg} />
+//       <Drawer.Screen name="주차장 현황" component={Availability} />
+//       <Drawer.Screen name="등록차량 등록" component={Register} />
+//     </Drawer.Navigator>
+//   );
+// }
+
 
 const styles = StyleSheet.create({
   container: {
