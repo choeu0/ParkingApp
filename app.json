@@ -1,7 +1,6 @@
 {
-  "expo": {
-    "name": "Sample3",
-    "slug": "Sample3",
+  "name": "비주얼 주차장",
+    "slug": "parkingapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon2.png",
@@ -13,25 +12,27 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.kims990408.Sample3"
+      "bundleIdentifier": "com.choeu00.parkingapp"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon2.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.kims990408.Sample3"
+      "package": "com.choeu00.parkingapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "53255bab-4c35-48bd-b484-0ad43d84d3f9"
+        "projectId": "669cc236-9bc2-41cb-9c90-a184664eda59"
       }
     },
     "plugins": [
       "expo-font"
-    ]
-  }
+    ],
+    "owner": "choeu00"
+  
+
 }

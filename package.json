@@ -1,12 +1,13 @@
 {
-  "name": "sample3",
+  "name": "parkingapp",
   "version": "1.0.0",
   "main": "expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build": "expo build"
   },
   "dependencies": {
     "@expo-google-fonts/black-han-sans": "^0.2.3",
@@ -22,12 +23,11 @@
     "@react-native-firebase/database": "^19.2.2",
     "@react-native-firebase/firestore": "^19.2.2",
     "@react-navigation/bottom-tabs": "^6.5.20",
-    "@react-navigation/drawer": "^6.6.15",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/stack": "^6.3.29",
     "@tanstack/react-query": "^5.35.5",
     "expo": "~51.0.8",
-    "expo-app-loading": "^2.1.1",
+
     "expo-font": "~12.0.5",
     "expo-linear-gradient": "~13.0.2",
     "expo-splash-screen": "~0.27.4",
@@ -46,7 +46,6 @@
     "react-native-screens": "^3.31.1",
     "react-native-svg": "15.2.0",
     "react-navigation": "^5.0.0",
-    "react-navigation-drawer": "^2.7.2",
     "react-query": "^3.39.3",
     "react-responsive": "^10.0.0"
   },
