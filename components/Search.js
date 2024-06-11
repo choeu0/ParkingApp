@@ -88,14 +88,14 @@ export default function Search() {
                 <Text style={styles.txt}>A1</Text>
               </View>
               <View style={[styles.box, styles.lightGrayBackground]}>
-              {inputText === reg3 && <Image source={require('../assets/ping.png')} style={styles.image} />}
-              <Text style={styles.txt}>A3</Text>
+              {inputText === reg2 && <Image source={require('../assets/ping.png')} style={styles.image} />}
+              <Text style={styles.txt}>A2</Text>
               </View>
             </View>
             <View style={styles.topBoxesContainer}>
               <View style={[styles.box, styles.lightGrayBackground]}>
-              {inputText === reg2 && <Image source={require('../assets/ping.png')} style={styles.image} />}
-              <Text style={styles.txt}>A2</Text>
+              {inputText === reg3 && <Image source={require('../assets/ping.png')} style={styles.image} />}
+              <Text style={styles.txt}>A3</Text>
               </View>
               <View style={[styles.box, styles.lightGrayBackground]}>
               {inputText === reg4 && <Image source={require('../assets/ping.png')} style={styles.image} />}
@@ -103,7 +103,6 @@ export default function Search() {
               </View>
             </View>
           <Text style={styles.modalText}>{modalContent}</Text>
-
           {/* 닫기 버튼 */}
           <TouchableOpacity style={styles.closeButton} onPress={closeModal}>
           <Text style={styles.closeButtonText}>닫기</Text>
@@ -122,7 +121,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 50,
+    fontSize: 45,
     fontWeight: 'bold',
     marginBottom: 100,
     color: 'lightblue',
@@ -222,7 +221,7 @@ const styles = StyleSheet.create({
     left: 3
   },
   vehicleText: {
-    fontSize: 65, // 차량 문자만 크게 만들기 위한 폰트 크기
+    fontSize: 55, // 차량 문자만 크게 만들기 위한 폰트 크기
   }
 
 });
